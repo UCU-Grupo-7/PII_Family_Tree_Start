@@ -1,24 +1,23 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System;
-using System.Runtime.InteropServices;
 
 namespace Library
 {
-    public class Node
+    public class Node<T>
     {
         private int number;
+        private T obj;
 
-        public Person person;
-
-        public Person Person_Creator(string name, int age)
+        public T getObj
         {
-            Person person = new Person(name, age);
-            return person;
-         }    //es el creator de persons en node.
-         
+            get
+            {
+                return obj;
+            }
+        } 
 
-        private List<Node> children = new List<Node>();
+        private List<Node<T>> children = new List<Node<T>>();
 
         public int Number {
             get
@@ -27,19 +26,19 @@ namespace Library
             }
         }
 
-        public ReadOnlyCollection<Node> Children {
+        public ReadOnlyCollection<Node<T>> Children {
             get
             {
                 return this.children.AsReadOnly();
             }
         }
 
-        public Node(string name, int age)
+        public Node(T t)
         {
-            this.person = Person_Creator(name,age);
+            this.obj = t;
         }
 
-        public void AddChildren(Node n)
+        public void AddChildren(Node<T> n)
         {
             this.children.Add(n);
         }

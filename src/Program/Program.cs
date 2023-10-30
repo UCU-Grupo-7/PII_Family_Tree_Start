@@ -6,8 +6,8 @@ namespace Program
     class Program
     {
         static void Main(string[] args)
-        {
-            /*Node n1 = new Node(1);
+        {/* 
+            Node n1 = new Node(1);
             Node n2 = new Node(2);
             Node n3 = new Node(3);
             Node n4 = new Node(4);
@@ -22,21 +22,20 @@ namespace Program
             n2.AddChildren(n5);
 
             n3.AddChildren(n6);
-            n3.AddChildren(n7);*/
+            n3.AddChildren(n7); */
 
             // visitar el árbol aquí
 
-            Node person1 = new Node("Juan",24);
-            Node person2 = new Node ("Jose", 54);
-            Node person3 = new Node("Julia", 56);
-            Node person4 = new Node("Josefina",16);
+            Person person1 = new Person("Juan", 60);
+            Person person2 = new Person("Jose", 24);
+            Person person3 = new Person("Josefina", 18);
 
-            person2.AddChildren(person4);
-            person2.AddChildren(person1);
+            Node<Person> node1 = new Node<Person>(person1);
+            Node<Person> node2 = new Node<Person>(person2);
+            Node<Person> node3 = new Node<Person>(person3);
 
-            Console.WriteLine(person1.Children);
-
-
+            node1.AddChildren(node2);
+            node1.AddChildren(node3);
         }
     }
 }
