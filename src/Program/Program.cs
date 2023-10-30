@@ -7,7 +7,7 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            Node n1 = new Node(1);
+            /*Node n1 = new Node(1);
             Node n2 = new Node(2);
             Node n3 = new Node(3);
             Node n4 = new Node(4);
@@ -22,9 +22,21 @@ namespace Program
             n2.AddChildren(n5);
 
             n3.AddChildren(n6);
-            n3.AddChildren(n7);
+            n3.AddChildren(n7);*/
 
             // visitar el árbol aquí
+
+            Node person1 = new Node("Juan",24);
+            Node person2 = new Node ("Jose", 54);
+            Node person3 = new Node("Julia", 56);
+            Node person4 = new Node("Josefina",16);
+
+            person2.AddChildren(person4);
+            person2.AddChildren(person1);
+
+            Console.WriteLine(person1.Children);
+
+
         }
     }
 }
