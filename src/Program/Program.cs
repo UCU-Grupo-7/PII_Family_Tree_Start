@@ -78,7 +78,13 @@ namespace Program
             nodeMadre.AddChildren(nodeHijo1);
             nodeMadre.AddChildren(nodeHijo2);
             nodeMadre.AddChildren(nodeHijo3);
-           
+
+
+
+
+            PersonVisitor personVisitor = new PersonVisitor();
+            nodeAbueloP.Accept(personVisitor);
+            Console.WriteLine(personVisitor.AgeSum);
             
 
 
