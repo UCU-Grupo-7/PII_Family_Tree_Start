@@ -79,12 +79,11 @@ namespace Program
             nodeMadre.AddChildren(nodeHijo2);
             nodeMadre.AddChildren(nodeHijo3);
 
-
-
+            //Parte 3
 
             PersonVisitor personVisitor = new PersonVisitor();
             nodeAbueloP.Accept(personVisitor);
-            Console.WriteLine(personVisitor.AgeSum);
+            Console.WriteLine($"Total age sum = {personVisitor.AgeSum}");
             
 
 
