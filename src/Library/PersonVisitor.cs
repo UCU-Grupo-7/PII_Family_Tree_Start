@@ -6,7 +6,10 @@ namespace Library
 {
     public class PersonVisitor : Visitor<Person>
     {
-        private HashSet<Person> visitedPersons = new HashSet<Person>();
+        private HashSet<Person> visitedPersons = new HashSet<Person>(); 
+        //Esto soluciona un problema que teniamos que a la hora de recorrer los nodos 
+        //ya que recorria varias veces los hijos y sumaba sus edades cada vez dando un resultado incorrecto
+
         /* A HashSet is a collection class in C# that represents a set of unique values. 
         It is part of the System.Collections.Generic namespace. 
         The main characteristic of a HashSet is that it does not allow duplicate elements, 
@@ -19,7 +22,7 @@ namespace Library
             ///////////////////////
             var person = node.getObj;
 
-            // Check if the person has already been visited
+            // Verifica si la persona ya fue visitada
             if (!visitedPersons.Contains(person))
             {
                 AgeSum += person.Age;
@@ -36,8 +39,9 @@ namespace Library
             Console.WriteLine($"Subtotal = {AgeSum}"); */
             foreach (var child in node.Children)
             {
+                Console.WriteLine(child.getObj.Age);
+
                 child.Accept(this);
-                
             }
         }
 

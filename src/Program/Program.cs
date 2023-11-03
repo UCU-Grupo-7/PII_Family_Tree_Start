@@ -85,7 +85,14 @@ namespace Program
             nodeAbueloP.Accept(personVisitor);
             Console.WriteLine($"Total age sum = {personVisitor.AgeSum}");
             
+            //Parte 4
+            MaxAge maxAge = new MaxAge();
+            nodeAbueloP.Accept(maxAge);
+            Console.WriteLine($"{maxAge.Oldest.Name} has {maxAge.Oldest.Age} years and is the oldest person.");
 
+            LongestName longestName = new LongestName();
+            nodeAbueloP.Accept(longestName);
+            Console.WriteLine($"{longestName.Longest.Name} has the longest name.");
 
         }
     }

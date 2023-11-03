@@ -6,7 +6,7 @@ namespace Library
 {
     public class Person 
     {
-        private string Name{get; set;}
+        public string Name{get; set;}
         public int Age {get; set;}
 
 
